@@ -4,7 +4,7 @@
 	<xs:import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
 	<xs:annotation>
 		<!-- This XSD document, including XML schema, indicates the content requested for basic data characterizing a physical sample. The content model is based on consideration of content requested for SESAR, EarthTime, GeoSciML, Storet, ISO19115.  Focus is on terrestrial (land based) samples. Content model includes sufficient information for SESAR registration (see http://www.geosamples.org/), but is not complete with all possible content in the SESAR sample data model. Each measurement should have a unique SpecimenURI. -->
-		<!--This XSD document was created on 2012-12-27 by Christy Caudill, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the physical sample specimens. -->
+		<!--This XSD document was created on 2013-01-23 by Christy Caudill, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the physical sample specimens. -->
 		<xs:appinfo source="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd">
 			<gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
 			<gmlsf:GMLProfileSchema>
@@ -24,16 +24,6 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
-					<xs:element name="SpecimenLabel" type="xs:string"/>
-					<xs:element name="SpecimenDescription" type="xs:string"/>
-					<xs:element name="ParentSpecimenURI" minOccurs="0">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:maxLength value="255"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:element>
-					<xs:element name="OtherID" type="xs:string" minOccurs="0"/>
 					<xs:element name="GeologicUnitName" type="xs:string"/>
 					<xs:element name="FeautureOfInterestURI" minOccurs="0">
 						<xs:simpleType>
@@ -42,9 +32,9 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
-					<xs:element name="MaterialClass" type="xs:string"/>
-					<xs:element name="LithologyTerms" type="xs:string" minOccurs="0"/>
-					<xs:element name="RockName" type="xs:string"/>
+					<xs:element name="SpecimenLabel" type="xs:string"/>
+					<xs:element name="SpecimenDescription" type="xs:string"/>
+					<xs:element name="OtherID" type="xs:string" minOccurs="0"/>
 					<xs:element name="SpecimenCollector" type="xs:string" minOccurs="0"/>
 					<xs:element name="SpecimenCollectorURI" minOccurs="0">
 						<xs:simpleType>
@@ -54,11 +44,13 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="DateCollected" type="xs:string"/>
+					<xs:element name="SpecimenType" type="xs:string"/>
+					<xs:element name="MaterialClass" type="xs:string" minOccurs="0"/>
+					<xs:element name="LithologyTerms" type="xs:string" minOccurs="0"/>
+					<xs:element name="RockName" type="xs:string"/>
 					<xs:element name="CollectionMethod" type="xs:string" minOccurs="0"/>
 					<xs:element name="CollectionPurpose" type="xs:string" minOccurs="0"/>
-					<xs:element name="SpecimenType" type="xs:string"/>
-					<xs:element name="SpecimenMass_kg" type="xs:double" minOccurs="0"/>
-					<xs:element name="CurrentCurationLocation" type="xs:string" minOccurs="0"/>
+					<xs:element name="SpecimenMassKg" type="xs:double" minOccurs="0"/>
 					<xs:element name="SpecimenCuration" type="xs:string" minOccurs="0"/>
 					<xs:element name="CuratorURI" minOccurs="0">
 						<xs:simpleType>
@@ -70,27 +62,33 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 					<xs:element name="AccessConstraint" type="xs:string" minOccurs="0"/>
 					<xs:element name="County" type="xs:string"/>
 					<xs:element name="State" type="xs:string"/>
-					<xs:element name="LocationKeyword" type="xs:string" minOccurs="0"/>
+					<xs:element name="OtherLocationName" type="xs:string" minOccurs="0"/>
 					<xs:element name="PLSS_Meridians" type="xs:string" minOccurs="0"/>
 					<xs:element name="TWP" type="xs:string" minOccurs="0"/>
 					<xs:element name="RGE" type="xs:string" minOccurs="0"/>
-					<xs:element name="Section" type="xs:double" minOccurs="0"/>
+					<xs:element name="Section_" type="xs:double" minOccurs="0"/>
 					<xs:element name="SectionPart" type="xs:string" minOccurs="0"/>
 					<xs:element name="Parcel" type="xs:string" minOccurs="0"/>
 					<xs:element name="UTM_E" type="xs:double" minOccurs="0"/>
 					<xs:element name="UTM_N" type="xs:double" minOccurs="0"/>
-					<xs:element name="UTMZone" type="xs:string" minOccurs="0"/>
+					<xs:element name="UTMDatumZone" type="xs:string" minOccurs="0"/>
+					<xs:element name="LocationKeyword" type="xs:string" minOccurs="0"/>
 					<xs:element name="LatDegree" type="xs:double"/>
 					<xs:element name="LongDegree" type="xs:double"/>
 					<xs:element name="SRS" type="xs:string"/>
 					<xs:element name="LocationUncertaintyStatement" type="xs:string"/>
-					<xs:element name="LocationDescription" type="xs:string" minOccurs="0"/>
-					<xs:element name="VerticalExtentMax_m" type="xs:double" minOccurs="0"/>
-					<xs:element name="VerticalExtentMin_m" type="xs:double" minOccurs="0"/>
-					<xs:element name="DatumElevation_m" type="xs:string" minOccurs="0"/>
-					<xs:element name="SampledFeatureMinAge_Ma" type="xs:string" minOccurs="0"/>
-					<xs:element name="SampledFeatureMaxAge_Ma" type="xs:string" minOccurs="0"/>
-					<xs:element name="GeologicAge" type="xs:string" minOccurs="0"/>
+					<xs:element name="LocationCode" type="xs:string" minOccurs="0"/>
+					<xs:element name="LocationRadius" type="xs:string" minOccurs="0"/>
+					<xs:element name="VerticalExtentMax" type="xs:double" minOccurs="0"/>
+					<xs:element name="VerticalExtentMin" type="xs:double" minOccurs="0"/>
+					<xs:element name="VerticalExtentUnits" type="xs:string" minOccurs="0"/>
+					<xs:element name="DatumElevation" type="xs:string" minOccurs="0"/>
+					<xs:element name="Strike" type="xs:string" minOccurs="0"/>
+					<xs:element name="Dip" type="xs:string" minOccurs="0"/>
+					<xs:element name="Trend" type="xs:string" minOccurs="0"/>
+					<xs:element name="Plunge" type="xs:string" minOccurs="0"/>
+					<xs:element name="SampledFeatureMinAge" type="xs:string" minOccurs="0"/>
+					<xs:element name="SampledFeatureMaxAge" type="xs:string" minOccurs="0"/>
 					<xs:element name="SampledFeatureAgeLabel" type="xs:string" minOccurs="0"/>
 					<xs:element name="AgeAssignmentBasis" type="xs:string" minOccurs="0"/>
 					<xs:element name="AgeUncertainty_Ma" type="xs:double" minOccurs="0"/>
@@ -102,8 +100,8 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
-					<xs:element name="SourceCitation" type="xs:string"/>
-					<xs:element name="SourceCitationURI" minOccurs="0">
+					<xs:element name="Source" type="xs:string"/>
+					<xs:element name="CitationURI" minOccurs="0">
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:maxLength value="255"/>
@@ -119,6 +117,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="MetadataUpdateDate" type="xs:string" minOccurs="0"/>
+					<xs:element name="MetadataLanguage" type="xs:string" minOccurs="0"/>
 					<xs:element name="RelatedResources" type="xs:string" minOccurs="0"/>
 					<xs:element name="Notes" type="xs:string" minOccurs="0"/>
 					<xs:element name="Shape" type="gml:PointPropertyType"/>
