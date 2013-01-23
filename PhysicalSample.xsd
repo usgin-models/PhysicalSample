@@ -77,8 +77,8 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 					<xs:element name="LongDegree" type="xs:double"/>
 					<xs:element name="SRS" type="xs:string"/>
 					<xs:element name="LocationUncertaintyStatement" type="xs:string"/>
-					<xs:element name="LocationCode" type="xs:string" minOccurs="0"/>
-					<xs:element name="LocationRadius" type="xs:string" minOccurs="0"/>
+					<xs:element name="LocationUncertaintyCode" type="xs:string" minOccurs="0"/>
+					<xs:element name="LocationUncertaintyRadius" type="xs:string" minOccurs="0"/>
 					<xs:element name="VerticalExtentMax" type="xs:double" minOccurs="0"/>
 					<xs:element name="VerticalExtentMin" type="xs:double" minOccurs="0"/>
 					<xs:element name="VerticalExtentUnits" type="xs:string" minOccurs="0"/>
