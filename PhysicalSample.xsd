@@ -35,7 +35,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 					</xs:element>
 					<xs:element name="OtherID" type="xs:string" minOccurs="0"/>
 					<xs:element name="GeologicUnitName" type="xs:string"/>
-					<xs:element name="FeautureOfInterestURI" minOccurs="0">
+					<xs:element name="FeatureOfInterestURI" minOccurs="0">
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:maxLength value="255"/>
