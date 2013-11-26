@@ -4,7 +4,7 @@
 	<xs:import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
 	<xs:annotation>
 		<!-- This XSD document, including XML schema, indicates the content requested for basic data characterizing a physical sample. The content model is based on consideration of content requested for SESAR, EarthTime, GeoSciML, Storet, ISO19115. Focus is on terrestrial (land based) samples. Content model includes sufficient information for SESAR registration (see http://www.geosamples.org/), but is not complete with all possible content in the SESAR sample data model. Each measurement should have a unique SpecimenURI. -->
-		<!--Annotated version 0.8.2. This XSD document was created on 2013-01-23 by Christy Caudill, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the physical sample specimens. Field Description annotations standardized 2013-08-22 by Esty Pape, AZGS.-->
+		<!--Version 0.8.3 updated date types to 'dateTime'. Annotated version 0.8.2. This XSD document was created on 2013-01-23 by Christy Caudill, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the physical sample specimens. Field Description annotations standardized 2013-08-22 by Esty Pape, AZGS.-->
 		<xs:appinfo source="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd">
 			<gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
 			<gmlsf:GMLProfileSchema>
@@ -100,7 +100,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 						<xs:annotation>
 							<xs:documentation>Free text name for lithology category of sample, e.g. biotite-hornblende granite, lithofeldspathic sandstone, calcareous arkose, biotite schist.</xs:documentation>
 						</xs:annotation>
-						</xs:element>
+					</xs:element>
 					<xs:element name="SpecimenCollector" type="xs:string" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Free text specification of person, organization, affiliation, address, etc. for party that originally collected specimen. Include contact information if available.</xs:documentation>
@@ -116,7 +116,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
-					<xs:element name="DateCollected" type="xs:string">
+					<xs:element name="DateCollected" type="xs:dateTime">
 						<xs:annotation>
 							<xs:documentation>Date for the record (date on which observation, measurement or test was made or specimen was collected. Day, month and year must be specified; Excel will display using ISO 8601 date and time (yyyy-mm-ddT:hh:mm) format. If only the year is known, enter month and day as 'Jan. 1', (or '1/1/', or '1-1-', or 'January 1,'). All dates will be converted to yyyy-mm-ddThh:mm.</xs:documentation>
 						</xs:annotation>
@@ -341,7 +341,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
-					<xs:element name="UpdateDate" type="xs:string" minOccurs="0">
+					<xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date of last time line of data was updated or corrected by the service provider.(Format: 2012-06-22T00:00).</xs:documentation>
 						</xs:annotation>
@@ -350,17 +350,17 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 						<xs:annotation>
 							<xs:documentation>This may be one to many http links to resources (logs, pictures or other documents if available online. Should be an http:// address (URL)) related to the observation described in each record. Delimit multiple values with the pipe '|' character.</xs:documentation>
 						</xs:annotation>
-						</xs:element>
+					</xs:element>
 					<xs:element name="Notes" type="xs:string" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Any additional information to be provided, including description and other data not captured by the template, details about collection method, contact information for  related parties (original collector, project PI, collection platform or Launch, etc.</xs:documentation>
 						</xs:annotation>
-						</xs:element>
+					</xs:element>
 					<xs:element name="Shape" type="gml:PointPropertyType">
 						<xs:annotation>
 							<xs:documentation>Added by GIS for WFS service; this element appears in the xml output, but is generated during service deployment from the latitude and longitude, therefore it doesn't appear in the template.</xs:documentation>
 						</xs:annotation>
-						</xs:element>
+					</xs:element>
 					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
